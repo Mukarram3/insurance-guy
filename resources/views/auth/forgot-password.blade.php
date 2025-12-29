@@ -5,7 +5,7 @@
     </div>
 
     <!-- Session Status -->
-{{--    @if (session('status'))--}}
+    @if (session('status'))
         <div class="success-message">
             {{ session('status') }}
         </div>
