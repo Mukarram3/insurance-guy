@@ -4,7 +4,7 @@
         <p>Create a new password for your account</p>
     </div>
 
-    <form method="POST" action="{{ route('password.store') }}">
+    <form method="POST" action="{{ url('/laravel/reset-password') }}">
         @csrf
 
         <!-- Password Reset Token -->

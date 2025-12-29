@@ -6,6 +6,7 @@ use App\Actions\Fortify\CreateNewUser;
 use App\Actions\Fortify\ResetUserPassword;
 use App\Actions\Fortify\UpdateUserPassword;
 use App\Actions\Fortify\UpdateUserProfileInformation;
+use Illuminate\Auth\Notifications\ResetPassword;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\RateLimiter;
@@ -36,6 +37,10 @@ class FortifyServiceProvider extends ServiceProvider
         Fortify::redirectUserForTwoFactorAuthenticationUsing(RedirectIfTwoFactorAuthenticatable::class);
         Fortify::confirmPasswordView(function () {
             return view('auth.confirm-password');
+        });
+
+        ResetPassword::createUrlUsing(function ($notifiable, string $token) {
+            return url('/laravel/reset-password/'.$token.'?email='.urlencode($notifiable->getEmailForPasswordReset()));
         });
 
         RateLimiter::for('login', function (Request $request) {

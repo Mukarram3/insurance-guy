@@ -11,7 +11,7 @@
         </div>
     @endif
 
-    <form method="POST" action="{{ route('password.email') }}">
+    <form method="POST" action="{{ url('laravel/forgot-password') }}">
         @csrf
 
         <!-- Email Address -->
