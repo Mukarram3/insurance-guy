@@ -84,7 +84,7 @@
             </button>
 
             <div style="text-align: center;">
-                <a class="text-link" href="{{ route('login') }}">
+                <a class="text-link" href="{{ url('/laravel/login') }}">
                     {{ __('Already registered?') }}
                 </a>
             </div>
