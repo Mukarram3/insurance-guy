@@ -5,7 +5,7 @@
     </div>
 
     <!-- Session Status -->
-    @if (session('status'))
+{{--    @if (session('status'))--}}
         <div class="success-message">
             {{ session('status') }}
         </div>
@@ -38,7 +38,7 @@
             </button>
 
             <div style="text-align: center;">
-                <a class="text-link" href="{{ route('login') }}">
+                <a class="text-link" href="{{ url('/laravel/login') }}">
                     {{ __('Back to login') }}
                 </a>
             </div>

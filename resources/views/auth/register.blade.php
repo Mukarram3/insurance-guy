@@ -4,7 +4,7 @@
         <p>Join us and start your journey</p>
     </div>
 
-    <form method="POST" action="{{ route('register') }}">
+    <form method="POST" action="{{ url('/laravel/register') }}">
         @csrf
 
         <!-- Name -->

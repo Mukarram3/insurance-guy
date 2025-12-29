@@ -11,7 +11,7 @@
         </div>
     @endif
 
-    <form method="POST" action="{{ route('login') }}">
+    <form method="POST" action="{{ url('/laravel/login') }}">
         @csrf
 
         <!-- Email Address -->
@@ -70,7 +70,7 @@
 
             @if (Route::has('password.request'))
                 <div style="text-align: center;">
-                    <a class="text-link" href="{{ route('password.request') }}">
+                    <a class="text-link" href="{{ url('/laravel/forgot-password') }}">
                         {{ __('Forgot your password?') }}
                     </a>
                 </div>
