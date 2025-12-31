@@ -48,7 +48,8 @@
 
                                     {!! auth()->user()->twoFactorQrCodeSvg() !!}
 
-                                    <form method="POST" action="{{ url('/laravel/user/confirmed-two-factor-authentication') }}" class="mt-4">
+{{--                                    <form method="POST" action="{{ url('/laravel/user/confirmed-two-factor-authentication') }}" class="mt-4">--}}
+                                    <form method="POST" action="{{ route('two-factor.enable') }}" class="mt-4">
                                         @csrf
                                         <x-text-input name="code" placeholder="123456" required />
                                         <x-primary-button class="mt-2">
