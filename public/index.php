@@ -2,6 +2,8 @@
 use Illuminate\Foundation\Application;
 use Illuminate\Http\Request;
 
+$_SERVER['REQUEST_URI'] = preg_replace('#^/laravel#', '', $_SERVER['REQUEST_URI']);
+
 define('LARAVEL_START', microtime(true));
 
 // Determine if the application is in maintenance mode...
