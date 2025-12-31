@@ -28,7 +28,7 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended(url('/laravel/dashboard', absolute: false));
+        return redirect('/laravel/dashboard');
     }
 
     /**
