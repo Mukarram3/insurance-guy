@@ -6,6 +6,8 @@ use App\Actions\Fortify\CreateNewUser;
 use App\Actions\Fortify\ResetUserPassword;
 use App\Actions\Fortify\UpdateUserPassword;
 use App\Actions\Fortify\UpdateUserProfileInformation;
+use Laravel\Fortify\Contracts\TwoFactorEnabledResponse;
+use App\Http\Responses\TwoFactorEnabledResponse as CustomTwoFactorEnabledResponse;
 use Illuminate\Auth\Notifications\ResetPassword;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
@@ -30,9 +32,10 @@ class FortifyServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        Fortify::redirects([
-            'two-factor-authentication' => '/laravel/profile',
-        ]);
+        $this->app->singleton(
+            TwoFactorEnabledResponse::class,
+            CustomTwoFactorEnabledResponse::class
+        );
         Fortify::createUsersUsing(CreateNewUser::class);
         Fortify::updateUserProfileInformationUsing(UpdateUserProfileInformation::class);
         Fortify::updateUserPasswordsUsing(UpdateUserPassword::class);
