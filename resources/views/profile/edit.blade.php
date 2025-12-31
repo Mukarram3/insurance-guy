@@ -31,7 +31,7 @@
 
                             {{-- Enable 2FA --}}
                             @if (! auth()->user()->two_factor_secret)
-                                <form method="POST" action="{{ url('/user/two-factor-authentication') }}">
+                                <form method="POST" action="{{ url('/laravel/user/two-factor-authentication') }}">
                                     @csrf
                                     <x-primary-button>
                                         Enable Two-Factor Authentication
@@ -48,7 +48,7 @@
 
                                     {!! auth()->user()->twoFactorQrCodeSvg() !!}
 
-                                    <form method="POST" action="{{ url('/user/confirmed-two-factor-authentication') }}" class="mt-4">
+                                    <form method="POST" action="{{ url('/laravel/user/confirmed-two-factor-authentication') }}" class="mt-4">
                                         @csrf
                                         <x-text-input name="code" placeholder="123456" required />
                                         <x-primary-button class="mt-2">
@@ -60,7 +60,7 @@
 
                             {{-- Disable 2FA --}}
                             @if (auth()->user()->two_factor_confirmed_at)
-                                <form method="POST" action="{{ url('/user/two-factor-authentication') }}" class="mt-6">
+                                <form method="POST" action="{{ url('/laravel/user/two-factor-authentication') }}" class="mt-6">
                                     @csrf
                                     @method('DELETE')
                                     <x-danger-button>
