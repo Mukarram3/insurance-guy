@@ -27,7 +27,7 @@
                             </h2>
                         </x-slot>
 
-                        <div class="max-w-xl mx-auto py-8">
+                        <div class="max-w-xl mx-auto py-8" style="display: none">
 
                             {{-- Enable 2FA --}}
                             @if (! auth()->user()->two_factor_secret)
