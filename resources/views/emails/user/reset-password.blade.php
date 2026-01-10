@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Your private record is ready</title>
+    <title>Set a new password — ORI</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
@@ -73,25 +73,35 @@
 <body>
 <div class="container">
     <div class="card">
+        <!-- ORI LOGO -->
         <div class="logo">ORI</div>
         <div class="tagline">It remembers what comes back.</div>
-        <h1>Your private record is ready</h1>
+
+        <h1>Set a new password</h1>
+
         <p>Hello {{ $user->name ?? 'there' }},</p>
-        <p>Your private record has been created.</p>
+
         <p>
-            Nothing has been shared.<br>
-            Nothing has been surfaced.
+            We received a request to set a new password for your private record.
         </p>
-        <p>You can return to it whenever something stays with you.</p>
+
+        <p>
+            Use the button below to continue.
+        </p>
+
+        <!-- RESET BUTTON -->
         <div class="button-wrap">
-            <a href="{{ url('/laravel/login') }}" class="button">
-                Return to your record
+            <a href="{{ $resetUrl }}" class="button">
+                Set a new password
             </a>
         </div>
+
         <p class="subtle">
-            If you didn’t create this record, you can safely ignore this email.
+            If you didn't request this, you can safely ignore this email.
+            Your password will not be changed.
         </p>
     </div>
+
     <div class="footer">
         © {{ date('Y') }} ORI. All rights reserved.
     </div>

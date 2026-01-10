@@ -1,7 +1,7 @@
 <x-guest-layout>
     <div class="auth-header">
-        <h1>Reset Password</h1>
-        <p>Enter your email to receive a reset link</p>
+        <h1>Reset your password</h1>
+        <p class="intro">Enter your email to receive a reset link.</p>
     </div>
 
     <!-- Session Status -->
@@ -16,7 +16,7 @@
 
         <!-- Email Address -->
         <div class="form-group">
-            <label for="email" class="form-label">{{ __('Email') }}</label>
+            <label for="email" class="form-label">Email</label>
             <input
                 id="email"
                 class="form-input {{ $errors->has('email') ? 'error' : '' }}"
@@ -25,23 +25,18 @@
                 value="{{ old('email') }}"
                 required
                 autofocus
-                placeholder="you@example.com"
             />
             @if ($errors->has('email'))
                 <div class="field-error">{{ $errors->first('email') }}</div>
             @endif
         </div>
 
-        <div class="form-actions">
-            <button type="submit" class="btn-primary">
-                {{ __('Email Password Reset Link') }}
-            </button>
+        <button type="submit" class="btn-primary">
+            Send reset link
+        </button>
 
-            <div style="text-align: center;">
-                <a class="text-link" href="{{ url('/laravel/login') }}">
-                    {{ __('Back to login') }}
-                </a>
-            </div>
+        <div class="text-link">
+            <a href="{{ url('/laravel/login') }}">Back to sign in</a>
         </div>
     </form>
 </x-guest-layout>

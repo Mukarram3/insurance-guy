@@ -1,7 +1,7 @@
 <x-guest-layout>
     <div class="auth-header">
-        <h1>Welcome Back</h1>
-        <p>Enter your credentials to access your account</p>
+        <h1>Welcome back</h1>
+        <p class="intro">Sign in to your private record.</p>
     </div>
 
     <!-- Session Status -->
@@ -16,7 +16,7 @@
 
         <!-- Email Address -->
         <div class="form-group">
-            <label for="email" class="form-label">{{ __('Email') }}</label>
+            <label for="email" class="form-label">Email</label>
             <input
                 id="email"
                 class="form-input {{ $errors->has('email') ? 'error' : '' }}"
@@ -26,7 +26,6 @@
                 required
                 autofocus
                 autocomplete="username"
-                placeholder="you@example.com"
             />
             @if ($errors->has('email'))
                 <div class="field-error">{{ $errors->first('email') }}</div>
@@ -35,7 +34,7 @@
 
         <!-- Password -->
         <div class="form-group">
-            <label for="password" class="form-label">{{ __('Password') }}</label>
+            <label for="password" class="form-label">Password</label>
             <input
                 id="password"
                 class="form-input {{ $errors->has('password') ? 'error' : '' }}"
@@ -43,7 +42,6 @@
                 name="password"
                 required
                 autocomplete="current-password"
-                placeholder="Enter your password"
             />
             @if ($errors->has('password'))
                 <div class="field-error">{{ $errors->first('password') }}</div>
@@ -59,22 +57,22 @@
                 name="remember"
             />
             <label for="remember_me" class="checkbox-label">
-                {{ __('Remember me') }}
+                Remember me
             </label>
         </div>
 
-        <div class="form-actions">
-            <button type="submit" class="btn-primary">
-                {{ __('Log in') }}
-            </button>
+        <button type="submit" class="btn-primary">
+            Sign in
+        </button>
 
-            @if (Route::has('password.request'))
-                <div style="text-align: center;">
-                    <a class="text-link" href="{{ url('/laravel/forgot-password') }}">
-                        {{ __('Forgot your password?') }}
-                    </a>
-                </div>
-            @endif
+        @if (Route::has('password.request'))
+            <div class="text-link">
+                <a href="{{ url('/laravel/forgot-password') }}">Forgot your password?</a>
+            </div>
+        @endif
+
+        <div class="text-link">
+            Don't have a record? <a href="{{ url('/laravel/register') }}">Create one</a>
         </div>
     </form>
 </x-guest-layout>

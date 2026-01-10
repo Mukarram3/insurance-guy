@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Your private record is ready</title>
+    <title>New sign-in to your record — ORI</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
@@ -43,8 +43,19 @@
             line-height: 1.6;
             margin: 0 0 16px;
         }
+        .details {
+            background: #f1f4f8;
+            border-radius: 12px;
+            padding: 16px 18px;
+            margin: 24px 0;
+            font-size: 14px;
+            color: #0b1c33;
+        }
+        .details div {
+            margin-bottom: 6px;
+        }
         .button-wrap {
-            margin: 32px 0;
+            margin: 28px 0;
             text-align: center;
         }
         .button {
@@ -60,7 +71,12 @@
         .subtle {
             font-size: 13px;
             color: #5f6f86;
-            margin-top: 24px;
+            margin-top: 20px;
+        }
+        .subtle a {
+            color: #0b1c33;
+            text-decoration: underline;
+            font-weight: 500;
         }
         .footer {
             text-align: center;
@@ -73,23 +89,30 @@
 <body>
 <div class="container">
     <div class="card">
+        <!-- ORI LOGO -->
         <div class="logo">ORI</div>
         <div class="tagline">It remembers what comes back.</div>
-        <h1>Your private record is ready</h1>
+        <h1>New sign-in to your record</h1>
         <p>Hello {{ $user->name ?? 'there' }},</p>
-        <p>Your private record has been created.</p>
         <p>
-            Nothing has been shared.<br>
-            Nothing has been surfaced.
+            A new sign-in to your private record was detected.
         </p>
-        <p>You can return to it whenever something stays with you.</p>
+        <div class="details">
+            <div><strong>Date:</strong> {{ $signInDate }}</div>
+            <div><strong>Location:</strong> {{ $location ?? 'Unknown' }}</div>
+            <div><strong>Device:</strong> {{ $device ?? 'Unknown' }}</div>
+        </div>
+        <p>
+            If this was you, no action is needed.
+        </p>
         <div class="button-wrap">
             <a href="{{ url('/laravel/login') }}" class="button">
                 Return to your record
             </a>
         </div>
         <p class="subtle">
-            If you didn’t create this record, you can safely ignore this email.
+            If you don’t recognize this sign-in, you can
+            <a href="">contact support</a>.
         </p>
     </div>
     <div class="footer">
