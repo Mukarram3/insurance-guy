@@ -311,9 +311,9 @@
 
 <footer>
     <nav>
-        <a href="#">Privacy</a>
-        <a href="#">Terms</a>
-        <a href="#">Support</a>
+        <a href="https://wp.useori.com/privacy/">Privacy</a>
+        <a href="https://wp.useori.com/terms/">Terms</a>
+        <a href="https://wp.useori.com/support/">Support</a>
     </nav>
     <div>&copy; {{ date('Y') }} {{ config('app.name', 'ORI') }}. All rights reserved.</div>
 </footer>
