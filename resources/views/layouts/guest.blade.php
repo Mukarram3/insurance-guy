@@ -65,7 +65,7 @@
             flex: 1;
             max-width: 520px;
             margin: 0 auto;
-            padding: 48px 24px 80px;
+            padding: 96px 24px 120px;
             width: 100%;
         }
 
