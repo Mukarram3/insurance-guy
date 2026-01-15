@@ -28,7 +28,7 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect('/laravel/dashboard');
+        return redirect('https://app.useori.com');
     }
 
     /**

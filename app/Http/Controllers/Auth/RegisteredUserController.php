@@ -51,6 +51,6 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        return redirect('/laravel/dashboard');
+        return redirect('https://app.useori.com');
     }
 }

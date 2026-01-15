@@ -15,7 +15,7 @@ class EmailVerificationPromptController extends Controller
     public function __invoke(Request $request): RedirectResponse|View
     {
         return $request->user()->hasVerifiedEmail()
-                    ? redirect('/laravel/dashboard')
+                    ? redirect('https://app.useori.com')
                     : view('auth.verify-email');
     }
 }
