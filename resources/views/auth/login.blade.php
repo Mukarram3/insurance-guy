@@ -72,7 +72,7 @@
         @endif
 
         <div class="text-link">
-            Don't have a record? <a href="{{ url('/laravel/register') }}">Create one</a>
+            <a href="{{ url('/laravel/register') }}"> Don't have a record? Create one</a>
         </div>
     </form>
 </x-guest-layout>

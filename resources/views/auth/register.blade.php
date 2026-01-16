@@ -84,7 +84,7 @@
         <div class="note">No streaks. No reminders. No pressure.</div>
 
         <div class="text-link">
-            Already have a record? <a href="{{ url('/laravel/login') }}">Sign in</a>
+            <a href="{{ url('/laravel/login') }}"> Already have a record? Sign in</a>
         </div>
     </form>
 </x-guest-layout>
